@@ -1,0 +1,387 @@
+/* =========================================================
+   SMARTROUTE RESPONSIVE
+========================================================= */
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 1200px) {
+
+    .tracking-wrapper {
+        grid-template-columns: 390px 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1199px) {
+
+    .tracking-wrapper {
+        grid-template-columns: 350px 1fr;
+    }
+
+    .tracking-sidebar {
+        padding: 20px;
+    }
+
+    .track-nav a {
+        padding: 9px;
+        font-size: 11px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .track-nav {
+        display: none;
+    }
+
+    .tracking-wrapper {
+
+        height: auto;
+
+        display: flex;
+
+        flex-direction: column;
+
+        overflow: visible;
+
+    }
+
+    .tracking-sidebar {
+
+        width: 100%;
+
+        border-right: none;
+
+        border-bottom: 1px solid #e2e8f0;
+
+        overflow: visible;
+
+    }
+
+    .map-area {
+
+        width: 100%;
+
+        height: 650px;
+
+        min-height: 650px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .track-navbar {
+
+        height: 68px;
+
+        padding: 0 15px;
+
+    }
+
+    .track-brand h2 {
+
+        font-size: 17px;
+
+    }
+
+    .track-brand p {
+
+        display: none;
+
+    }
+
+    .track-logo {
+
+        width: 38px;
+
+        height: 38px;
+
+    }
+
+    .tracking-sidebar {
+
+        padding: 18px;
+
+    }
+
+    .live-stats {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+    .map-area {
+
+        height: 600px;
+
+        min-height: 600px;
+
+    }
+
+    .map-topbar {
+
+        top: 10px;
+
+        left: 10px;
+
+        right: 10px;
+
+    }
+
+    .map-search {
+
+        width: auto;
+
+        flex: 1;
+
+    }
+
+    .map-control {
+
+        width: 40px;
+
+        height: 40px;
+
+    }
+
+    .location-card {
+
+        top: 65px;
+
+        right: 10px;
+
+    }
+
+    .map-bottom-card {
+
+        left: 10px;
+
+        right: 10px;
+
+        bottom: 10px;
+
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+    }
+
+    .vertical-line {
+
+        display: none;
+
+    }
+
+    .map-legend {
+
+        left: 10px;
+
+        bottom: 110px;
+
+    }
+
+    .locate-button {
+
+        right: 10px;
+
+        bottom: 110px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 575px) {
+
+    .track-brand h2 {
+
+        font-size: 16px;
+
+    }
+
+    .login-btn {
+
+        width: 38px;
+
+        height: 38px;
+
+        padding: 0;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+    }
+
+    .login-btn span {
+
+        display: none;
+
+    }
+
+    .tracking-sidebar {
+
+        padding: 15px;
+
+    }
+
+    .sidebar-heading h1 {
+
+        font-size: 23px;
+
+    }
+
+    .live-bus-card {
+
+        padding: 16px;
+
+    }
+
+    .live-stat {
+
+        padding: 10px;
+
+    }
+
+    .live-stat strong {
+
+        font-size: 16px;
+
+    }
+
+    .map-area {
+
+        height: 550px;
+
+        min-height: 550px;
+
+    }
+
+    .map-legend {
+
+        display: none;
+
+    }
+
+    .locate-button span {
+
+        display: none;
+
+    }
+
+    .locate-button {
+
+        width: 42px;
+
+        height: 42px;
+
+        padding: 0;
+
+        justify-content: center;
+
+        border-radius: 50%;
+
+    }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL
+========================================================= */
+
+@media (max-width: 399px) {
+
+    .track-navbar {
+
+        padding: 0 10px;
+
+    }
+
+    .track-logo {
+
+        width: 34px;
+
+        height: 34px;
+
+    }
+
+    .tracking-sidebar {
+
+        padding: 12px;
+
+    }
+
+    .live-stats {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+/* =========================================================
+   LANDSCAPE MOBILE
+========================================================= */
+
+@media (max-height: 550px)
+and (orientation: landscape) {
+
+    .tracking-wrapper {
+
+        height: auto;
+
+    }
+
+    .map-area {
+
+        height: 500px;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+
+        animation-duration: 0.01ms !important;
+
+        transition-duration: 0.01ms !important;
+
+    }
+
+}

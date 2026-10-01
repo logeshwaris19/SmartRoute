@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | SmartRoute</title>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet"
+          href="css/dashboard.css">
+
+    <!-- Responsive -->
+    <link rel="stylesheet"
+          href="css/responsive.css">
+
+</head>
+
+
+<body class="dashboard-page">
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <!-- BRAND -->
+
+        <a href="index.html"
+           class="brand">
+
+            <div class="brand-icon">
+                <i class="bi bi-bus-front-fill"></i>
+            </div>
+
+            <div>
+
+                <span class="brand-name">
+                    SmartRoute
+                </span>
+
+                <small>
+                    INTELLIGENT TRANSIT
+                </small>
+
+            </div>
+
+        </a>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                <i class="bi bi-house"></i>
+                Home
+            </a>
+
+            <a href="routes.html">
+                <i class="bi bi-signpost-split"></i>
+                Routes
+            </a>
+
+            <a href="tracking.html">
+                <i class="bi bi-broadcast"></i>
+                Live Tracking
+            </a>
+
+            <a href="dashboard.html"
+               class="active">
+                <i class="bi bi-grid"></i>
+                Dashboard
+            </a>
+
+            <a href="admin.html">
+                <i class="bi bi-shield-lock"></i>
+                Admin
+            </a>
+
+        </nav>
+
+
+        <!-- LOGIN -->
+
+        <a href="login.html"
+           class="nav-login">
+
+            <i class="bi bi-person-circle"></i>
+
+            Login
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN DASHBOARD
+===================================================== -->
+
+<main class="dashboard-main">
+
+
+    <!-- =================================================
+         DASHBOARD HEADER
+    ================================================= -->
+
+    <section class="dashboard-header">
+
+        <div>
+
+            <div class="dashboard-status">
+
+                <span></span>
+
+                LIVE SYSTEM
+
+            </div>
+
+            <h1>
+                Good evening, Traveler 👋
+            </h1>
+
+            <p>
+                Plan your journey, track buses and manage
+                your daily travel from one place.
+            </p>
+
+        </div>
+
+
+        <div class="dashboard-date">
+
+            <div class="date-icon">
+
+                <i class="bi bi-calendar3"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    TODAY
+                </span>
+
+                <strong>
+                    September 15, 2026
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         QUICK STATS
+    ================================================= -->
+
+    <section class="dashboard-stats">
+
+
+        <!-- ACTIVE BUSES -->
+
+        <div class="dash-stat-card">
+
+            <div class="dash-stat-top">
+
+                <div class="dash-stat-icon blue">
+
+                    <i class="bi bi-bus-front-fill"></i>
+
+                </div>
+
+                <span class="stat-live">
+                    LIVE
+                </span>
+
+            </div>
+
+
+            <div class="dash-stat-number">
+                24
+            </div>
+
+            <div class="dash-stat-title">
+                Active Buses
+            </div>
+
+            <div class="dash-stat-bottom">
+
+                <i class="bi bi-arrow-up"></i>
+
+                8% from yesterday
+
+            </div>
+
+        </div>
+
+
+
+        <!-- BUS STOPS -->
+
+        <div class="dash-stat-card">
+
+            <div class="dash-stat-top">
+
+                <div class="dash-stat-icon purple">
+
+                    <i class="bi bi-geo-alt-fill"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="dash-stat-number">
+                68
+            </div>
+
+            <div class="dash-stat-title">
+                Bus Stops
+            </div>
+
+            <div class="dash-stat-bottom neutral">
+
+                <i class="bi bi-check-circle"></i>
+
+                All locations active
+
+            </div>
+
+        </div>
+
+
+
+        <!-- AVG ETA -->
+
+        <div class="dash-stat-card">
+
+            <div class="dash-stat-top">
+
+                <div class="dash-stat-icon green">
+
+                    <i class="bi bi-clock-fill"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="dash-stat-number">
+                12
+                <small>min</small>
+            </div>
+
+            <div class="dash-stat-title">
+                Average ETA
+            </div>
+
+            <div class="dash-stat-bottom">
+
+                <i class="bi bi-arrow-down"></i>
+
+                2 min faster
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TRIPS -->
+
+        <div class="dash-stat-card">
+
+            <div class="dash-stat-top">
+
+                <div class="dash-stat-icon orange">
+
+                    <i class="bi bi-signpost-2-fill"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="dash-stat-number">
+                18
+            </div>
+
+            <div class="dash-stat-title">
+                Trips This Month
+            </div>
+
+            <div class="dash-stat-bottom">
+
+                <i class="bi bi-arrow-up"></i>
+
+                12.5% increase
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         MAIN GRID
+    ================================================= -->
+
+    <section class="dashboard-content-grid">
+
+
+        <!-- =================================================
+             LIVE BUS CARD
+        ================================================= -->
+
+        <div class="dashboard-card live-bus-card">
+
+            <div class="card-heading">
+
+                <div>
+
+                    <span class="card-label">
+
+                        <i class="bi bi-broadcast"></i>
+
+                        LIVE TRACKING
+
+                    </span>
+
+                    <h2>
+                        Your Bus
+                    </h2>
+
+                </div>
+
+
+                <a href="tracking.html"
+                   class="card-link">
+
+                    View Map
+
+                    <i class="bi bi-arrow-up-right"></i>
+
+                </a>
+
+            </div>
+
+
+            <!-- BUS -->
+
+            <div class="current-bus">
+
+                <div class="bus-number-box">
+
+                    <i class="bi bi-bus-front-fill"></i>
+
+                </div>
+
+
+                <div class="current-bus-info">
+
+                    <strong>
+                        TN 38 AB 1024
+                    </strong>
+
+                    <span>
+                        Route 12 • City Express
+                    </span>
+
+                </div>
+
+
+                <span class="running-status">
+
+                    <span></span>
+
+                    On Time
+
+                </span>
+
+            </div>
+
+
+            <!-- ROUTE -->
+
+            <div class="route-progress">
+
+                <div class="route-stop">
+
+                    <span class="stop-dot active"></span>
+
+                    <div>
+
+                        <strong>
+                            New Bus Stand
+                        </strong>
+
+                        <small>
+                            Departed • 10:42 AM
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="route-line-progress">
+
+                    <span></span>
+
+                </div>
+
+
+                <div class="route-stop">
+
+                    <span class="stop-dot"></span>
+
+                    <div>
+
+                        <strong>
+                            Tiruchengode
+                        </strong>
+
+                        <small>
+                            Next stop • 8 min
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ETA -->
+
+            <div class="eta-panel">
+
+                <div>
+
+                    <span>
+                        ARRIVING IN
+                    </span>
+
+                    <strong>
+                        8 min
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        DISTANCE
+                    </span>
+
+                    <strong>
+                        3.4 km
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        SPEED
+                    </span>
+
+                    <strong>
+                        42 km/h
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             UPCOMING JOURNEY
+        ================================================= -->
+
+        <div class="dashboard-card upcoming-card">
+
+            <div class="card-heading">
+
+                <div>
+
+                    <span class="card-label">
+
+                        <i class="bi bi-calendar-check"></i>
+
+                        UPCOMING
+
+                    </span>
+
+                    <h2>
+                        Next Journey
+                    </h2>
+
+                </div>
+
+                <i class="bi bi-three-dots card-menu"></i>
+
+            </div>
+
+
+            <div class="journey-date">
+
+                <div class="journey-day">
+                    16
+                </div>
+
+                <div>
+
+                    <strong>
+                        Tomorrow
+                    </strong>
+
+                    <span>
+                        Wednesday • September
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="journey-route">
+
+                <div class="journey-point">
+
+                    <span class="blue-point"></span>
+
+                    <div>
+
+                        <small>
+                            FROM
+                        </small>
+
+                        <strong>
+                            Tiruchengode
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="journey-line"></div>
+
+
+                <div class="journey-point">
+
+                    <span class="green-point"></span>
+
+                    <div>
+
+                        <small>
+                            TO
+                        </small>
+
+                        <strong>
+                            Namakkal
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="journey-details">
+
+                <div>
+
+                    <i class="bi bi-clock"></i>
+
+                    <span>
+                        08:30 AM
+                    </span>
+
+                </div>
+
+                <div>
+
+                    <i class="bi bi-bus-front"></i>
+
+                    <span>
+                        Route 24
+                    </span>
+
+                </div>
+
+                <div>
+
+                    <i class="bi bi-wallet2"></i>
+
+                    <span>
+                        ₹25
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button class="primary-dashboard-btn"
+                    onclick="window.location.href='routes.html'">
+
+                <i class="bi bi-search"></i>
+
+                Find Bus
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         SECOND ROW
+    ================================================= -->
+
+    <section class="dashboard-content-grid second-grid">
+
+
+        <!-- =================================================
+             RECENT TRIPS
+        ================================================= -->
+
+        <div class="dashboard-card trips-card">
+
+            <div class="card-heading">
+
+                <div>
+
+                    <span class="card-label">
+
+                        <i class="bi bi-clock-history"></i>
+
+                        ACTIVITY
+
+                    </span>
+
+                    <h2>
+                        Recent Trips
+                    </h2>
+
+                </div>
+
+
+                <button class="text-button">
+                    View All
+                </button>
+
+            </div>
+
+
+            <div class="trip-list">
+
+
+                <div class="trip-item">
+
+                    <div class="trip-icon blue">
+
+                        <i class="bi bi-bus-front"></i>
+
+                    </div>
+
+                    <div class="trip-info">
+
+                        <strong>
+                            Tiruchengode → Namakkal
+                        </strong>
+
+                        <span>
+                            Route 24 • Today, 8:30 AM
+                        </span>
+
+                    </div>
+
+                    <div class="trip-fare">
+                        ₹25
+                    </div>
+
+                </div>
+
+
+                <div class="trip-item">
+
+                    <div class="trip-icon purple">
+
+                        <i class="bi bi-bus-front"></i>
+
+                    </div>
+
+                    <div class="trip-info">
+
+                        <strong>
+                            Namakkal → Tiruchengode
+                        </strong>
+
+                        <span>
+                            Route 24 • Yesterday, 5:15 PM
+                        </span>
+
+                    </div>
+
+                    <div class="trip-fare">
+                        ₹25
+                    </div>
+
+                </div>
+
+
+                <div class="trip-item">
+
+                    <div class="trip-icon green">
+
+                        <i class="bi bi-bus-front"></i>
+
+                    </div>
+
+                    <div class="trip-info">
+
+                        <strong>
+                            Central Market → Railway Station
+                        </strong>
+
+                        <span>
+                            Route 31 • Sep 13, 11:20 AM
+                        </span>
+
+                    </div>
+
+                    <div class="trip-fare">
+                        ₹20
+                    </div>
+
+                </div>
+
+
+                <div class="trip-item">
+
+                    <div class="trip-icon orange">
+
+                        <i class="bi bi-bus-front"></i>
+
+                    </div>
+
+                    <div class="trip-info">
+
+                        <strong>
+                            New Bus Stand → College Road
+                        </strong>
+
+                        <span>
+                            Route 12 • Sep 12, 9:10 AM
+                        </span>
+
+                    </div>
+
+                    <div class="trip-fare">
+                        ₹15
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ALERTS
+        ================================================= -->
+
+        <div class="dashboard-card alerts-card">
+
+            <div class="card-heading">
+
+                <div>
+
+                    <span class="card-label">
+
+                        <i class="bi bi-bell"></i>
+
+                        NOTIFICATIONS
+
+                    </span>
+
+                    <h2>
+                        Live Alerts
+                    </h2>
+
+                </div>
+
+                <span class="alert-count">
+                    3
+                </span>
+
+            </div>
+
+
+            <div class="alert-list">
+
+
+                <div class="alert-item warning">
+
+                    <div class="alert-icon">
+
+                        <i class="bi bi-exclamation-triangle"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Route 31 delayed
+                        </strong>
+
+                        <span>
+                            Expected delay: 10 minutes
+                        </span>
+
+                        <small>
+                            5 min ago
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="alert-item info">
+
+                    <div class="alert-icon">
+
+                        <i class="bi bi-info-circle"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Route 24 approaching
+                        </strong>
+
+                        <span>
+                            Your bus is 2 stops away
+                        </span>
+
+                        <small>
+                            8 min ago
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="alert-item success">
+
+                    <div class="alert-icon">
+
+                        <i class="bi bi-check-circle"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Trip completed
+                        </strong>
+
+                        <span>
+                            Your Route 12 trip is complete
+                        </span>
+
+                        <small>
+                            1 hour ago
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         SAVED STOPS + TRAVEL STATS
+    ================================================= -->
+
+    <section class="dashboard-content-grid bottom-grid">
+
+
+        <!-- SAVED STOPS -->
+
+        <div class="dashboard-card saved-stops-card">
+
+            <div class="card-heading">
+
+                <div>
+
+                    <span class="card-label">
+
+                        <i class="bi bi-bookmark"></i>
+
+                        SAVED
+
+                    </span>
+
+                    <h2>
+                        Favorite Stops
+                    </h2>
+
+                </div>
+
+                <button class="circle-button">
+
+                    <i class="bi bi-plus"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="saved-stop-list">
+
+
+                <div class="saved-stop">
+
+                    <div class="saved-stop-icon">
+
+                        <i class="bi bi-house-fill"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Home
+                        </strong>
+
+                        <span>
+                            New Bus Stand
+                        </span>
+
+                    </div>
+
+                    <i class="bi bi-chevron-right"></i>
+
+                </div>
+
+
+                <div class="saved-stop">
+
+                    <div class="saved-stop-icon">
+
+                        <i class="bi bi-mortarboard-fill"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            College
+                        </strong>
+
+                        <span>
+                            College Road
+                        </span>
+
+                    </div>
+
+                    <i class="bi bi-chevron-right"></i>
+
+                </div>
+
+
+                <div class="saved-stop">
+
+                    <div class="saved-stop-icon">
+
+                        <i class="bi bi-shop"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Market
+                        </strong>
+
+                        <span>
+                            Central Market
+                        </span>
+
+                    </div>
+
+                    <i class="bi bi-chevron-right"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TRAVEL STATS -->
+
+        <div class="dashboard-card travel-card">
+
+            <div class="card-heading">
+
+                <div>
+
+                    <span class="card-label">
+
+                        <i class="bi bi-bar-chart"></i>
+
+                        OVERVIEW
+
+                    </span>
+
+                    <h2>
+                        Travel Statistics
+                    </h2>
+
+                </div>
+
+
+                <select class="stats-select">
+
+                    <option>This Month</option>
+                    <option>This Week</option>
+                    <option>This Year</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="travel-stats">
+
+
+                <div class="travel-stat">
+
+                    <div class="travel-stat-icon blue">
+
+                        <i class="bi bi-signpost"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Distance
+                        </span>
+
+                        <strong>
+                            186 km
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="travel-stat">
+
+                    <div class="travel-stat-icon green">
+
+                        <i class="bi bi-bus-front"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Trips
+                        </span>
+
+                        <strong>
+                            18
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="travel-stat">
+
+                    <div class="travel-stat-icon purple">
+
+                        <i class="bi bi-clock"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Travel Time
+                        </span>
+
+                        <strong>
+                            8h 24m
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="travel-stat">
+
+                    <div class="travel-stat-icon orange">
+
+                        <i class="bi bi-wallet2"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Fare
+                        </span>
+
+                        <strong>
+                            ₹420
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="monthly-progress">
+
+                <div class="progress-heading">
+
+                    <span>
+                        Monthly travel goal
+                    </span>
+
+                    <strong>
+                        186 / 250 km
+                    </strong>
+
+                </div>
+
+                <div class="progress-track">
+
+                    <div style="width:74%"></div>
+
+                </div>
+
+                <small>
+                    64 km remaining to reach your goal
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         QUICK ACTIONS
+    ================================================= -->
+
+    <section class="quick-actions">
+
+        <button onclick="window.location.href='routes.html'">
+
+            <i class="bi bi-search"></i>
+
+            <div>
+
+                <strong>
+                    Find a Bus
+                </strong>
+
+                <span>
+                    Search routes
+                </span>
+
+            </div>
+
+            <i class="bi bi-arrow-up-right"></i>
+
+        </button>
+
+
+        <button onclick="window.location.href='tracking.html'">
+
+            <i class="bi bi-broadcast"></i>
+
+            <div>
+
+                <strong>
+                    Track Live
+                </strong>
+
+                <span>
+                    View bus location
+                </span>
+
+            </div>
+
+            <i class="bi bi-arrow-up-right"></i>
+
+        </button>
+
+
+        <button onclick="window.location.href='routes.html'">
+
+            <i class="bi bi-signpost-split"></i>
+
+            <div>
+
+                <strong>
+                    Plan Journey
+                </strong>
+
+                <span>
+                    Choose your route
+                </span>
+
+            </div>
+
+            <i class="bi bi-arrow-up-right"></i>
+
+        </button>
+
+
+        <button onclick="window.location.href='index.html'">
+
+            <i class="bi bi-house"></i>
+
+            <div>
+
+                <strong>
+                    Home
+                </strong>
+
+                <span>
+                    Back to homepage
+                </span>
+
+            </div>
+
+            <i class="bi bi-arrow-up-right"></i>
+
+        </button>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="dashboard-footer">
+
+    <div>
+
+        <strong>
+            SmartRoute
+        </strong>
+
+        <span>
+            Intelligent Transit Platform
+        </span>
+
+    </div>
+
+
+    <div class="footer-status">
+
+        <span>
+
+            <i class="bi bi-circle-fill"></i>
+
+            All systems operational
+
+        </span>
+
+        <span>
+            © 2026 SmartRoute
+        </span>
+
+    </div>
+
+</footer>
+
+
+
+</body>
+
+</html>

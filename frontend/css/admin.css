@@ -1,0 +1,1163 @@
+/* =====================================================
+   SMARTROUTE ADMIN DASHBOARD
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+body {
+    margin: 0;
+    background: #f5f7fb;
+    color: #17213a;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+
+/* =====================================================
+   ADMIN MAIN
+===================================================== */
+
+.admin-page {
+    max-width: 1280px;
+
+    margin: auto;
+
+    padding: 48px 30px 80px;
+}
+
+
+/* =====================================================
+   ADMIN HEADER
+===================================================== */
+
+.admin-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 32px;
+}
+
+.admin-label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #2463eb;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.4px;
+}
+
+.admin-live-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #24c88a;
+
+    box-shadow: 0 0 10px rgba(36,200,138,.5);
+}
+
+.admin-header h1 {
+    margin: 9px 0 0;
+
+    font-size: 32px;
+
+    letter-spacing: -1.2px;
+
+    color: #142039;
+}
+
+.admin-header p {
+    max-width: 650px;
+
+    margin: 9px 0 0;
+
+    color: #7e899c;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   ADD BUS BUTTON
+===================================================== */
+
+.add-bus-btn {
+    flex-shrink: 0;
+
+    padding: 13px 18px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #2463eb;
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    transition: .25s;
+}
+
+.add-bus-btn:hover {
+    background: #1854d1;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 25px rgba(36,99,235,.22);
+}
+
+
+/* =====================================================
+   STATISTICS
+===================================================== */
+
+.admin-stats {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 16px;
+
+    margin-bottom: 18px;
+}
+
+.admin-stat-card {
+    padding: 21px;
+
+    border: 1px solid #e3e8f0;
+
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    transition: .25s;
+}
+
+.admin-stat-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 30px rgba(31,52,90,.07);
+}
+
+.admin-stat-icon {
+    width: 47px;
+    height: 47px;
+
+    flex-shrink: 0;
+
+    border-radius: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 19px;
+}
+
+.admin-stat-icon.blue {
+    background: #edf4ff;
+    color: #2463eb;
+}
+
+.admin-stat-icon.green {
+    background: #eafaf3;
+    color: #16a673;
+}
+
+.admin-stat-icon.orange {
+    background: #fff3e7;
+    color: #db791b;
+}
+
+.admin-stat-icon.purple {
+    background: #f2edff;
+    color: #7955d8;
+}
+
+.admin-stat-content span {
+    display: block;
+
+    color: #8994a7;
+
+    font-size: 9px;
+}
+
+.admin-stat-content strong {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #17213a;
+
+    font-size: 25px;
+}
+
+.admin-stat-content small {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 8px;
+}
+
+.positive {
+    color: #14966a;
+}
+
+.neutral {
+    color: #d17a21;
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.admin-grid {
+    display: grid;
+
+    grid-template-columns: 1.45fr .8fr;
+
+    gap: 18px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.admin-card {
+    padding: 23px;
+
+    border: 1px solid #e3e8f0;
+
+    border-radius: 17px;
+
+    background: white;
+}
+
+.admin-card-header {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 22px;
+}
+
+.card-label {
+    display: block;
+
+    color: #2463eb;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.2px;
+}
+
+.admin-card-header h2 {
+    margin: 6px 0 0;
+
+    color: #17213a;
+
+    font-size: 18px;
+
+    letter-spacing: -.4px;
+}
+
+
+/* =====================================================
+   LIVE BADGE
+===================================================== */
+
+.live-badge {
+    padding: 6px 9px;
+
+    border-radius: 20px;
+
+    background: #eafaf3;
+
+    color: #15966a;
+
+    font-size: 7px;
+
+    font-weight: 900;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
+.live-badge span {
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #22b87d;
+
+    animation: livePulse 1.5s infinite;
+}
+
+@keyframes livePulse {
+
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* =====================================================
+   FLEET
+===================================================== */
+
+.fleet-item {
+    padding: 13px 0;
+
+    border-bottom: 1px solid #edf0f5;
+
+    display: grid;
+
+    grid-template-columns: 42px 1fr 145px 72px;
+
+    align-items: center;
+
+    gap: 13px;
+}
+
+.fleet-item:last-of-type {
+    border-bottom: none;
+}
+
+.fleet-icon {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 11px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.blue-bg {
+    background: #edf4ff;
+    color: #2463eb;
+}
+
+.green-bg {
+    background: #eafaf3;
+    color: #15966a;
+}
+
+.orange-bg {
+    background: #fff3e7;
+    color: #d97919;
+}
+
+.purple-bg {
+    background: #f2edff;
+    color: #7955d8;
+}
+
+.fleet-info strong {
+    display: block;
+
+    color: #1b263d;
+
+    font-size: 11px;
+}
+
+.fleet-info span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #8994a7;
+
+    font-size: 8px;
+}
+
+.fleet-location small {
+    display: block;
+
+    color: #a0a8b6;
+
+    font-size: 7px;
+
+    letter-spacing: .7px;
+}
+
+.fleet-location strong {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #45536b;
+
+    font-size: 9px;
+}
+
+.fleet-status {
+    padding: 6px 8px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    font-size: 7px;
+
+    font-weight: 800;
+}
+
+.fleet-status i {
+    font-size: 5px;
+}
+
+.fleet-status.running {
+    background: #eafaf3;
+    color: #15966a;
+}
+
+.fleet-status.delayed {
+    background: #fff3e7;
+    color: #d97919;
+}
+
+.fleet-status.stopped {
+    background: #f0f2f5;
+    color: #737e90;
+}
+
+.view-live-btn {
+    width: 100%;
+
+    margin-top: 17px;
+
+    padding: 11px;
+
+    border: 1px solid #e0e6ef;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: #2463eb;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.view-live-btn:hover {
+    background: #edf4ff;
+}
+
+
+/* =====================================================
+   HEALTH
+===================================================== */
+
+.health-item {
+    margin-bottom: 21px;
+}
+
+.health-title {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+    color: #66748b;
+
+    font-size: 9px;
+}
+
+.health-title strong {
+    color: #27344b;
+}
+
+.health-bar {
+    width: 100%;
+
+    height: 7px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: #edf0f5;
+}
+
+.health-bar div {
+    height: 100%;
+
+    border-radius: 10px;
+
+    background: #2463eb;
+}
+
+.system-ok {
+    margin-top: 27px;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: #eafaf3;
+
+    color: #15966a;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.system-ok span {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #20b87e;
+}
+
+
+/* =====================================================
+   MANAGEMENT
+===================================================== */
+
+.management-card {
+    margin-bottom: 18px;
+}
+
+.management-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 12px;
+}
+
+.management-item {
+    min-height: 90px;
+
+    padding: 15px;
+
+    border: 1px solid #e5eaf1;
+
+    border-radius: 13px;
+
+    background: #fbfcfe;
+
+    text-align: left;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+.management-item:hover {
+    background: white;
+
+    border-color: #cbdcf9;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(31,52,90,.06);
+}
+
+.management-icon {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.management-item div:nth-child(2) {
+    flex: 1;
+}
+
+.management-item strong {
+    display: block;
+
+    color: #1d2940;
+
+    font-size: 10px;
+}
+
+.management-item span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #8b96a8;
+
+    font-size: 8px;
+
+    line-height: 1.4;
+}
+
+.management-item > i {
+    color: #9ba5b5;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   PERIOD SELECT
+===================================================== */
+
+.period-select {
+    padding: 7px 9px;
+
+    border: 1px solid #e1e6ef;
+
+    border-radius: 7px;
+
+    background: white;
+
+    color: #65728a;
+
+    font-size: 8px;
+
+    outline: none;
+}
+
+
+/* =====================================================
+   PERFORMANCE
+===================================================== */
+
+.performance-item {
+    margin-bottom: 20px;
+}
+
+.performance-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    margin-bottom: 8px;
+}
+
+.performance-top div strong {
+    display: block;
+
+    color: #28344a;
+
+    font-size: 10px;
+}
+
+.performance-top div span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #929bab;
+
+    font-size: 8px;
+}
+
+.performance-top > strong {
+    color: #2463eb;
+
+    font-size: 10px;
+}
+
+.performance-bar {
+    width: 100%;
+
+    height: 7px;
+
+    border-radius: 10px;
+
+    background: #edf0f5;
+
+    overflow: hidden;
+}
+
+.performance-bar div {
+    height: 100%;
+
+    border-radius: 10px;
+
+    background: #2463eb;
+}
+
+
+/* =====================================================
+   ACTIVITY
+===================================================== */
+
+.activity-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #edf0f5;
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-icon {
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 13px;
+}
+
+.activity-item strong {
+    display: block;
+
+    color: #29364c;
+
+    font-size: 10px;
+}
+
+.activity-item span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #8a95a7;
+
+    font-size: 8px;
+}
+
+.activity-item small {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #a3abba;
+
+    font-size: 7px;
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    background: rgba(9,18,36,.62);
+
+    backdrop-filter: blur(6px);
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.admin-modal {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 430px;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    background: white;
+
+    box-shadow: 0 30px 80px rgba(0,0,0,.25);
+
+    animation: modalIn .25s ease;
+}
+
+@keyframes modalIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+.modal-close {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 32px;
+    height: 32px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #f2f4f7;
+
+    color: #6e7889;
+
+    cursor: pointer;
+}
+
+.modal-icon {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 13px;
+
+    background: #edf4ff;
+
+    color: #2463eb;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 21px;
+}
+
+.admin-modal h2 {
+    margin-top: 18px;
+
+    color: #17213a;
+
+    font-size: 21px;
+}
+
+.admin-modal > p {
+    margin-top: 7px;
+
+    color: #8a95a8;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+}
+
+.admin-modal form {
+    margin-top: 22px;
+}
+
+.admin-modal label {
+    display: block;
+
+    margin: 13px 0 6px;
+
+    color: #56647b;
+
+    font-size: 9px;
+
+    font-weight: 800;
+}
+
+.admin-modal input,
+.admin-modal select {
+    width: 100%;
+
+    height: 43px;
+
+    padding: 0 12px;
+
+    border: 1px solid #dfe5ee;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: #263249;
+
+    font-size: 11px;
+
+    outline: none;
+}
+
+.admin-modal input:focus,
+.admin-modal select:focus {
+    border-color: #2463eb;
+
+    box-shadow: 0 0 0 3px rgba(36,99,235,.08);
+}
+
+.modal-submit {
+    width: 100%;
+
+    height: 44px;
+
+    margin-top: 22px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #2463eb;
+
+    color: white;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+}
+
+.modal-submit:hover {
+    background: #1854d1;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.admin-footer {
+    padding: 22px 30px;
+
+    border-top: 1px solid #e4e8ef;
+
+    background: white;
+
+    color: #8a95a8;
+
+    font-size: 9px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.admin-footer div {
+    display: flex;
+
+    gap: 18px;
+}
+
+.admin-footer i {
+    color: #2463eb;
+
+    margin-right: 4px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1050px) {
+
+    .admin-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .management-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .admin-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    .admin-page {
+        padding: 35px 18px 60px;
+    }
+
+    .admin-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .admin-header h1 {
+        font-size: 27px;
+    }
+
+    .add-bus-btn {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .admin-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .fleet-item {
+        grid-template-columns: 42px 1fr auto;
+    }
+
+    .fleet-location {
+        display: none;
+    }
+
+    .management-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .admin-card {
+        padding: 17px;
+    }
+
+    .fleet-item {
+        gap: 9px;
+    }
+
+    .fleet-status {
+        font-size: 6px;
+
+        padding: 5px 6px;
+    }
+
+    .admin-footer {
+        flex-direction: column;
+
+        gap: 10px;
+
+        text-align: center;
+    }
+
+    .admin-modal {
+        padding: 24px;
+    }
+
+}

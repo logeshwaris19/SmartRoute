@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Login | SmartRoute</title>
+
+
+    <!-- Bootstrap Icons -->
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <!-- Global CSS -->
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+
+    <!-- Login CSS -->
+
+    <link rel="stylesheet"
+          href="css/login.css">
+
+
+    <!-- Responsive -->
+
+    <link rel="stylesheet"
+          href="css/responsive.css">
+
+</head>
+
+
+<body class="login-page">
+
+
+<!-- =====================================================
+     LOGIN HEADER
+===================================================== -->
+
+<header class="login-header">
+
+    <a href="index.html"
+       class="login-brand">
+
+        <div class="login-brand-icon">
+
+            <i class="bi bi-bus-front-fill"></i>
+
+        </div>
+
+        <div>
+
+            <strong>
+                SmartRoute
+            </strong>
+
+            <small>
+                INTELLIGENT TRANSIT
+            </small>
+
+        </div>
+
+    </a>
+
+
+    <a href="index.html"
+       class="back-home">
+
+        <i class="bi bi-arrow-left"></i>
+
+        Back to Home
+
+    </a>
+
+</header>
+
+
+
+<!-- =====================================================
+     LOGIN CONTAINER
+===================================================== -->
+
+<main class="login-container">
+
+
+    <!-- =================================================
+         LEFT BRAND PANEL
+    ================================================= -->
+
+    <section class="login-visual">
+
+
+        <div class="visual-content">
+
+
+            <span class="visual-badge">
+
+                <span></span>
+
+                SMART TRANSPORTATION
+
+            </span>
+
+
+            <h1>
+
+                Move smarter.<br>
+
+                <strong>
+                    Travel better.
+                </strong>
+
+            </h1>
+
+
+            <p>
+
+                Track buses in real-time, discover faster
+                routes and make every journey easier with
+                SmartRoute.
+
+            </p>
+
+
+            <!-- FEATURES -->
+
+            <div class="visual-features">
+
+
+                <div class="visual-feature">
+
+                    <div class="feature-icon">
+
+                        <i class="bi bi-broadcast"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Real-Time Tracking
+                        </strong>
+
+                        <span>
+                            Know where your bus is
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="visual-feature">
+
+                    <div class="feature-icon">
+
+                        <i class="bi bi-signpost-split"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Smart Routes
+                        </strong>
+
+                        <span>
+                            Find efficient routes
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="visual-feature">
+
+                    <div class="feature-icon">
+
+                        <i class="bi bi-clock-history"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Accurate ETA
+                        </strong>
+
+                        <span>
+                            Plan your journey better
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- DECORATIVE MAP -->
+
+            <div class="route-visual">
+
+                <div class="route-line"></div>
+
+                <div class="route-point point-one">
+
+                    <i class="bi bi-geo-alt-fill"></i>
+
+                </div>
+
+                <div class="route-point point-two">
+
+                    <i class="bi bi-bus-front-fill"></i>
+
+                </div>
+
+                <div class="route-point point-three">
+
+                    <i class="bi bi-geo-alt-fill"></i>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="visual-footer">
+
+            <span>
+                <i class="bi bi-shield-check"></i>
+                Secure platform
+            </span>
+
+            <span>
+                <i class="bi bi-broadcast"></i>
+                Live transit
+            </span>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         RIGHT LOGIN PANEL
+    ================================================= -->
+
+    <section class="login-panel">
+
+
+        <div class="login-card">
+
+
+            <!-- HEADER -->
+
+            <div class="login-heading">
+
+
+                <div class="mobile-login-icon">
+
+                    <i class="bi bi-bus-front-fill"></i>
+
+                </div>
+
+
+                <span class="welcome-small">
+                    WELCOME BACK
+                </span>
+
+
+                <h2>
+                    Sign in to SmartRoute
+                </h2>
+
+
+                <p>
+                    Access your dashboard and manage your
+                    journeys.
+                </p>
+
+            </div>
+
+
+
+            <!-- LOGIN FORM -->
+
+            <form id="loginForm">
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="email">
+
+                        Email Address
+
+                    </label>
+
+
+                    <div class="input-wrapper">
+
+                        <i class="bi bi-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <div class="password-label">
+
+                        <label for="password">
+
+                            Password
+
+                        </label>
+
+
+                        <a href="#"
+                           onclick="forgotPassword(event)">
+
+                            Forgot password?
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="input-wrapper">
+
+                        <i class="bi bi-lock"></i>
+
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required>
+
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            onclick="togglePassword()">
+
+                            <i class="bi bi-eye"
+                               id="passwordIcon"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- REMEMBER -->
+
+                <div class="login-options">
+
+                    <label class="remember">
+
+                        <input
+                            type="checkbox"
+                            id="rememberMe">
+
+                        <span>
+                            Remember me
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- LOGIN BUTTON -->
+
+                <button
+                    type="submit"
+                    class="login-submit"
+                    id="loginButton">
+
+                    <span>
+                        Sign In
+                    </span>
+
+                    <i class="bi bi-arrow-right"></i>
+
+                </button>
+
+
+            </form>
+
+
+
+            <!-- DIVIDER -->
+
+            <div class="login-divider">
+
+                <span>
+                    OR CONTINUE WITH
+                </span>
+
+            </div>
+
+
+
+            <!-- SOCIAL -->
+
+            <div class="social-login">
+
+
+                <button type="button"
+                        onclick="socialLogin('Google')">
+
+                    <i class="bi bi-google"></i>
+
+                    Google
+
+                </button>
+
+
+                <button type="button"
+                        onclick="socialLogin('Microsoft')">
+
+                    <i class="bi bi-microsoft"></i>
+
+                    Microsoft
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- REGISTER -->
+
+            <div class="register-link">
+
+                Don't have an account?
+
+                <a href="#"
+                   onclick="createAccount(event)">
+
+                    Create account
+
+                </a>
+
+            </div>
+
+
+
+            <!-- SECURITY -->
+
+            <div class="login-security">
+
+                <i class="bi bi-shield-lock"></i>
+
+                Your login information is protected
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     LOGIN JS
+===================================================== -->
+
+<script src="js/login.js"></script>
+
+
+</body>
+
+</html>

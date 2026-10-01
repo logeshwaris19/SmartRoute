@@ -1,0 +1,2153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SmartRoute | Routes</title>
+
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <!-- Main CSS -->
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <link rel="stylesheet"
+          href="css/dashboard.css">
+
+    <link rel="stylesheet"
+          href="css/responsive.css">
+
+
+    <style>
+
+        /* ==================================================
+           ROUTES PAGE
+        ================================================== */
+
+        body {
+            background: #f5f7fb;
+        }
+
+        .routes-page {
+            min-height: calc(100vh - 78px);
+        }
+
+
+        /* ==================================================
+           HERO
+        ================================================== */
+
+        .routes-hero {
+
+            background:
+                radial-gradient(
+                    circle at 85% 10%,
+                    rgba(77,145,255,0.22),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #0b1224,
+                    #111d38
+                );
+
+            padding: 55px 30px 75px;
+
+            color: white;
+        }
+
+
+        .routes-hero-inner {
+
+            max-width: 1180px;
+
+            margin: auto;
+
+        }
+
+
+        .route-badge {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 8px 13px;
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            border-radius: 30px;
+
+            background: rgba(255,255,255,0.06);
+
+            color: #69a2ff;
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .route-badge i {
+
+            font-size: 7px;
+
+        }
+
+
+        .routes-hero h1 {
+
+            margin-top: 18px;
+
+            font-size: 46px;
+
+            letter-spacing: -2px;
+
+        }
+
+
+        .routes-hero p {
+
+            margin-top: 10px;
+
+            max-width: 570px;
+
+            color: #9daac1;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* ==================================================
+           SEARCH PLANNER
+        ================================================== */
+
+        .planner-box {
+
+            max-width: 1050px;
+
+            margin: -38px auto 0;
+
+            position: relative;
+
+            z-index: 5;
+
+            padding: 12px;
+
+            background: white;
+
+            border: 1px solid #e5eaf2;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 20px 50px rgba(22,36,65,0.13);
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+        }
+
+
+        .planner-location {
+
+            flex: 1;
+
+            min-width: 200px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            padding: 8px 13px;
+
+        }
+
+
+        .planner-icon {
+
+            width: 40px;
+
+            height: 40px;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 11px;
+
+            background: #edf4ff;
+
+            color: #2463eb;
+
+        }
+
+
+        .planner-icon.to {
+
+            background: #eefaf5;
+
+            color: #19a974;
+
+        }
+
+
+        .planner-location label {
+
+            display: block;
+
+            color: #8a94a7;
+
+            font-size: 8px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .planner-location input {
+
+            width: 100%;
+
+            margin-top: 5px;
+
+            border: none;
+
+            outline: none;
+
+            color: #17213a;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+        }
+
+
+        .planner-location input::placeholder {
+
+            color: #a2aaba;
+
+            font-weight: 400;
+
+        }
+
+
+        .planner-swap {
+
+            width: 38px;
+
+            height: 38px;
+
+            border: 1px solid #e1e6ef;
+
+            border-radius: 50%;
+
+            background: #f8fafc;
+
+            color: #506078;
+
+            cursor: pointer;
+
+            transition: .25s;
+
+        }
+
+
+        .planner-swap:hover {
+
+            color: #2463eb;
+
+            transform: rotate(180deg);
+
+        }
+
+
+        .planner-search {
+
+            height: 55px;
+
+            padding: 0 25px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background: #2463eb;
+
+            color: white;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            cursor: pointer;
+
+        }
+
+
+        .planner-search:hover {
+
+            background: #1956d1;
+
+        }
+
+
+        /* ==================================================
+           CONTENT
+        ================================================== */
+
+        .routes-content {
+
+            max-width: 1180px;
+
+            margin: auto;
+
+            padding: 55px 30px 90px;
+
+        }
+
+
+        .routes-toolbar {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .routes-toolbar h2 {
+
+            color: #17213a;
+
+            font-size: 23px;
+
+        }
+
+
+        .routes-toolbar p {
+
+            margin-top: 5px;
+
+            color: #8994a8;
+
+            font-size: 11px;
+
+        }
+
+
+        /* ==================================================
+           FILTER BUTTONS
+        ================================================== */
+
+        .filter-buttons {
+
+            display: flex;
+
+            gap: 7px;
+
+        }
+
+
+        .filter-buttons button {
+
+            padding: 9px 13px;
+
+            border: 1px solid #e0e6ef;
+
+            border-radius: 8px;
+
+            background: white;
+
+            color: #718096;
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: .2s;
+
+        }
+
+
+        .filter-buttons button:hover {
+
+            border-color: #bcd0f5;
+
+            color: #2463eb;
+
+        }
+
+
+        .filter-buttons button.active {
+
+            background: #edf4ff;
+
+            color: #2463eb;
+
+            border-color: #cfe0ff;
+
+        }
+
+
+        /* ==================================================
+           ROUTE LIST
+        ================================================== */
+
+        .route-list {
+
+            display: grid;
+
+            gap: 15px;
+
+        }
+
+
+        /* ==================================================
+           ROUTE CARD
+        ================================================== */
+
+        .route-card {
+
+            padding: 20px;
+
+            background: white;
+
+            border: 1px solid #e4e9f1;
+
+            border-radius: 17px;
+
+            display: grid;
+
+            grid-template-columns:
+                1.2fr
+                1fr
+                0.7fr
+                auto;
+
+            align-items: center;
+
+            gap: 25px;
+
+            transition: .25s;
+
+        }
+
+
+        .route-card:hover {
+
+            transform: translateY(-3px);
+
+            border-color: #c9d9f7;
+
+            box-shadow:
+                0 15px 35px rgba(30,52,90,0.08);
+
+        }
+
+
+        .route-card.featured {
+
+            border: 1.5px solid #9dbff8;
+
+            box-shadow:
+                0 10px 30px rgba(36,99,235,0.08);
+
+        }
+
+
+        /* ==================================================
+           SEARCH MATCH
+        ================================================== */
+
+        .route-card.search-match {
+
+            border-color: #2463eb;
+
+            box-shadow:
+                0 10px 30px rgba(36,99,235,0.12);
+
+        }
+
+
+        /* ==================================================
+           ROUTE TITLE
+        ================================================== */
+
+        .route-title {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+        }
+
+
+        .bus-number {
+
+            width: 48px;
+
+            height: 48px;
+
+            flex-shrink: 0;
+
+            border-radius: 13px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #edf4ff;
+
+            color: #2463eb;
+
+            font-size: 20px;
+
+        }
+
+
+        .route-title strong {
+
+            display: block;
+
+            color: #18233b;
+
+            font-size: 15px;
+
+        }
+
+
+        .route-title span {
+
+            display: block;
+
+            margin-top: 4px;
+
+            color: #8a94a8;
+
+            font-size: 9px;
+
+        }
+
+
+        /* ==================================================
+           RECOMMENDED / MATCH LABEL
+        ================================================== */
+
+        .recommended {
+
+            display: none;
+
+            margin-left: 7px;
+
+            padding: 3px 6px;
+
+            border-radius: 5px;
+
+            background: #eafaf3;
+
+            color: #15966a;
+
+            font-size: 7px;
+
+            font-weight: 800;
+
+        }
+
+
+        /* ==================================================
+           TIMELINE
+        ================================================== */
+
+        .route-time {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+        }
+
+
+        .time-point strong {
+
+            display: block;
+
+            color: #1a243b;
+
+            font-size: 13px;
+
+        }
+
+
+        .time-point span {
+
+            display: block;
+
+            margin-top: 3px;
+
+            color: #9099aa;
+
+            font-size: 8px;
+
+        }
+
+
+        .timeline-line {
+
+            width: 70px;
+
+            height: 2px;
+
+            position: relative;
+
+            background: #dce5f2;
+
+        }
+
+
+        .timeline-line::before,
+        .timeline-line::after {
+
+            content: "";
+
+            position: absolute;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 7px;
+
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: #2463eb;
+
+            border: 2px solid white;
+
+            box-shadow:
+                0 0 0 1px #2463eb;
+
+        }
+
+
+        .timeline-line::before {
+
+            left: 0;
+
+        }
+
+
+        .timeline-line::after {
+
+            right: 0;
+
+        }
+
+
+        /* ==================================================
+           ROUTE INFO
+        ================================================== */
+
+        .route-info {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 7px;
+
+        }
+
+
+        .info-row {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            color: #778399;
+
+            font-size: 9px;
+
+        }
+
+
+        .info-row i {
+
+            color: #2463eb;
+
+        }
+
+
+        /* ==================================================
+           STATUS
+        ================================================== */
+
+        .route-status {
+
+            text-align: center;
+
+        }
+
+
+        .status {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            padding: 6px 9px;
+
+            border-radius: 20px;
+
+            font-size: 8px;
+
+            font-weight: 800;
+
+        }
+
+
+        .status.on-time {
+
+            background: #eafaf3;
+
+            color: #15966a;
+
+        }
+
+
+        .status.delayed {
+
+            background: #fff3e9;
+
+            color: #d97919;
+
+        }
+
+
+        .status i {
+
+            font-size: 6px;
+
+        }
+
+
+        /* ==================================================
+           ETA
+        ================================================== */
+
+        .eta {
+
+            margin-top: 8px;
+
+            color: #17213a;
+
+            font-size: 18px;
+
+            font-weight: 800;
+
+        }
+
+
+        .eta small {
+
+            color: #8b95a8;
+
+            font-size: 8px;
+
+            font-weight: 500;
+
+        }
+
+
+        /* ==================================================
+           TRACK BUTTON
+        ================================================== */
+
+        .track-route {
+
+            margin-top: 8px;
+
+            padding: 11px 16px;
+
+            border: none;
+
+            border-radius: 9px;
+
+            background: #111c35;
+
+            color: white;
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            cursor: pointer;
+
+            transition: .25s;
+
+        }
+
+
+        .track-route:hover {
+
+            background: #2463eb;
+
+            transform: translateY(-2px);
+
+        }
+
+
+        /* ==================================================
+           NO RESULTS
+        ================================================== */
+
+        .no-results {
+
+            display: none;
+
+            padding: 50px;
+
+            margin-top: 20px;
+
+            text-align: center;
+
+            background: white;
+
+            border: 1px solid #e5eaf2;
+
+            border-radius: 16px;
+
+        }
+
+
+        .no-results i {
+
+            font-size: 35px;
+
+            color: #b6c0d0;
+
+        }
+
+
+        .no-results h3 {
+
+            margin-top: 12px;
+
+            color: #27334b;
+
+        }
+
+
+        .no-results p {
+
+            margin-top: 5px;
+
+            color: #8994a8;
+
+            font-size: 12px;
+
+        }
+
+
+        /* ==================================================
+           TABLET
+        ================================================== */
+
+        @media (max-width: 1050px) {
+
+            .route-card {
+
+                grid-template-columns:
+                    1fr
+                    1fr
+                    1fr;
+
+            }
+
+            .route-status {
+
+                text-align: left;
+
+            }
+
+        }
+
+
+        /* ==================================================
+           MOBILE
+        ================================================== */
+
+        @media (max-width: 850px) {
+
+            .planner-box {
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                margin-left: 20px;
+
+                margin-right: 20px;
+
+            }
+
+
+            .planner-swap {
+
+                align-self: center;
+
+                transform: rotate(90deg);
+
+            }
+
+
+            .planner-search {
+
+                justify-content: center;
+
+            }
+
+
+            .route-card {
+
+                grid-template-columns: 1fr;
+
+                gap: 18px;
+
+            }
+
+
+            .route-status {
+
+                text-align: left;
+
+            }
+
+
+            .routes-toolbar {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 15px;
+
+            }
+
+        }
+
+
+        /* ==================================================
+           SMALL MOBILE
+        ================================================== */
+
+        @media (max-width: 550px) {
+
+            .routes-hero {
+
+                padding: 40px 20px 65px;
+
+            }
+
+
+            .routes-hero h1 {
+
+                font-size: 36px;
+
+            }
+
+
+            .routes-content {
+
+                padding: 40px 18px 70px;
+
+            }
+
+
+            .route-time {
+
+                justify-content: space-between;
+
+            }
+
+
+            .timeline-line {
+
+                flex: 1;
+
+            }
+
+
+            .filter-buttons {
+
+                flex-wrap: wrap;
+
+            }
+
+
+            .planner-location {
+
+                min-width: 0;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ======================================================
+     NAVBAR
+====================================================== -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+
+        <!-- LOGO -->
+
+        <a href="index.html"
+           class="brand">
+
+            <div class="brand-icon">
+
+                <i class="bi bi-bus-front-fill"></i>
+
+            </div>
+
+
+            <div class="brand-text">
+
+                <span class="brand-name">
+                    SmartRoute
+                </span>
+
+                <small>
+                    INTELLIGENT TRANSIT
+                </small>
+
+            </div>
+
+        </a>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="nav-links">
+
+
+            <!-- HOME -->
+
+            <a href="index.html"
+               class="nav-link">
+
+                <i class="bi bi-house"></i>
+
+                <span>
+                    Home
+                </span>
+
+            </a>
+
+
+            <!-- ROUTES -->
+
+            <a href="routes.html"
+               class="nav-link active">
+
+                <i class="bi bi-signpost-split"></i>
+
+                <span>
+                    Routes
+                </span>
+
+            </a>
+
+
+            <!-- LIVE TRACKING -->
+
+            <a href="tracking.html"
+               class="nav-link">
+
+                <i class="bi bi-broadcast-pin"></i>
+
+                <span>
+                    Live Tracking
+                </span>
+
+            </a>
+
+
+            <!-- DASHBOARD -->
+
+            <a href="dashboard.html"
+               class="nav-link">
+
+                <i class="bi bi-grid"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- ADMIN -->
+
+            <a href="admin.html"
+               class="nav-link">
+
+                <i class="bi bi-shield-lock"></i>
+
+                <span>
+                    Admin
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- LOGIN -->
+
+        <a href="login.html"
+           class="nav-login">
+
+            <i class="bi bi-person-circle"></i>
+
+            <span>
+                Login
+            </span>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- ======================================================
+     HERO
+====================================================== -->
+
+<section class="routes-hero">
+
+    <div class="routes-hero-inner">
+
+
+        <span class="route-badge">
+
+            <i class="bi bi-lightning-charge-fill"></i>
+
+            SMART ROUTE PLANNER
+
+        </span>
+
+
+        <h1>
+            Find your best route.
+        </h1>
+
+
+        <p>
+            Compare buses, arrival times and travel duration
+            to choose the perfect journey for you.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================================
+     SEARCH PLANNER
+====================================================== -->
+
+<div class="planner-box">
+
+
+    <!-- FROM -->
+
+    <div class="planner-location">
+
+
+        <div class="planner-icon">
+
+            <i class="bi bi-circle-fill"></i>
+
+        </div>
+
+
+        <div>
+
+            <label>
+                FROM
+            </label>
+
+
+            <input
+                type="text"
+                id="fromLocation"
+                placeholder="Starting point"
+                autocomplete="off">
+
+        </div>
+
+    </div>
+
+
+
+    <!-- SWAP -->
+
+    <button
+        class="planner-swap"
+        id="swapBtn"
+        type="button"
+        title="Swap locations">
+
+        <i class="bi bi-arrow-down-up"></i>
+
+    </button>
+
+
+
+    <!-- TO -->
+
+    <div class="planner-location">
+
+
+        <div class="planner-icon to">
+
+            <i class="bi bi-geo-alt-fill"></i>
+
+        </div>
+
+
+        <div>
+
+            <label>
+                TO
+            </label>
+
+
+            <input
+                type="text"
+                id="toLocation"
+                placeholder="Destination"
+                autocomplete="off">
+
+        </div>
+
+    </div>
+
+
+
+    <!-- SEARCH -->
+
+    <button
+        class="planner-search"
+        id="searchRoutes"
+        type="button">
+
+        <i class="bi bi-search"></i>
+
+        Search Routes
+
+    </button>
+
+</div>
+
+
+
+<!-- ======================================================
+     CONTENT
+====================================================== -->
+
+<section class="routes-content">
+
+
+    <!-- TOOLBAR -->
+
+    <div class="routes-toolbar">
+
+
+        <div>
+
+            <h2>
+                Available Routes
+            </h2>
+
+
+            <p id="routeSummary">
+                5 routes available
+            </p>
+
+        </div>
+
+
+
+        <!-- FILTERS -->
+
+        <div class="filter-buttons">
+
+
+            <button
+                class="active"
+                data-filter="all"
+                type="button">
+
+                All Routes
+
+            </button>
+
+
+            <button
+                data-filter="fastest"
+                type="button">
+
+                Fastest
+
+            </button>
+
+
+            <button
+                data-filter="cheapest"
+                type="button">
+
+                Cheapest
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         ROUTE LIST
+    ================================================== -->
+
+    <div
+        class="route-list"
+        id="routeList">
+
+
+
+        <!-- ==================================================
+             ROUTE 12
+        ================================================== -->
+
+        <article
+            class="route-card featured"
+            data-type="fastest">
+
+
+            <!-- ROUTE TITLE -->
+
+            <div class="route-title">
+
+
+                <div class="bus-number">
+
+                    <i class="bi bi-bus-front-fill"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+
+                        Route 12
+
+                        <span class="recommended">
+                            MATCH
+                        </span>
+
+                    </strong>
+
+
+                    <span>
+                        College → Kumarapalayam
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TIME -->
+
+            <div class="route-time">
+
+
+                <div class="time-point">
+
+                    <strong>
+                        08:30 AM
+                    </strong>
+
+                    <span>
+                        Departure
+                    </span>
+
+                </div>
+
+
+                <div class="timeline-line"></div>
+
+
+                <div class="time-point">
+
+                    <strong>
+                        09:05 AM
+                    </strong>
+
+                    <span>
+                        Arrival
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- INFO -->
+
+            <div class="route-info">
+
+
+                <div class="info-row">
+
+                    <i class="bi bi-clock"></i>
+
+                    35 min
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <i class="bi bi-signpost"></i>
+
+                    8 stops
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STATUS -->
+
+            <div class="route-status">
+
+
+                <span class="status on-time">
+
+                    <i class="bi bi-circle-fill"></i>
+
+                    On Time
+
+                </span>
+
+
+                <div class="eta">
+
+                    6 min
+
+                    <small>
+                        away
+                    </small>
+
+                </div>
+
+
+                <button
+                    class="track-route"
+                    type="button">
+
+                    <i class="bi bi-broadcast"></i>
+
+                    Track Live
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ==================================================
+             ROUTE 24
+        ================================================== -->
+
+        <article
+            class="route-card"
+            data-type="cheapest">
+
+
+            <div class="route-title">
+
+
+                <div class="bus-number">
+
+                    <i class="bi bi-bus-front-fill"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+
+                        Route 24
+
+                        <span class="recommended">
+                            MATCH
+                        </span>
+
+                    </strong>
+
+
+                    <span>
+                        Velagoundampatty → Ksr College
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="route-time">
+
+
+                <div class="time-point">
+
+                    <strong>
+                        08:42 AM
+                    </strong>
+
+                    <span>
+                        Departure
+                    </span>
+
+                </div>
+
+
+                <div class="timeline-line"></div>
+
+
+                <div class="time-point">
+
+                    <strong>
+                        09:24 AM
+                    </strong>
+
+                    <span>
+                        Arrival
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="route-info">
+
+
+                <div class="info-row">
+
+                    <i class="bi bi-clock"></i>
+
+                    42 min
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <i class="bi bi-signpost"></i>
+
+                    11 stops
+
+                </div>
+
+            </div>
+
+
+
+            <div class="route-status">
+
+
+                <span class="status delayed">
+
+                    <i class="bi bi-circle-fill"></i>
+
+                    5 min delay
+
+                </span>
+
+
+                <div class="eta">
+
+                    11 min
+
+                    <small>
+                        away
+                    </small>
+
+                </div>
+
+
+                <button
+                    class="track-route"
+                    type="button">
+
+                    <i class="bi bi-broadcast"></i>
+
+                    Track Live
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ==================================================
+             ROUTE 31
+        ================================================== -->
+
+        <article
+            class="route-card"
+            data-type="fastest">
+
+
+            <div class="route-title">
+
+
+                <div class="bus-number">
+
+                    <i class="bi bi-bus-front-fill"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+
+                        Route 31
+
+                        <span class="recommended">
+                            MATCH
+                        </span>
+
+                    </strong>
+
+
+                    <span>
+                        Erode → Namakkal
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="route-time">
+
+
+                <div class="time-point">
+
+                    <strong>
+                        08:55 AM
+                    </strong>
+
+                    <span>
+                        Departure
+                    </span>
+
+                </div>
+
+
+                <div class="timeline-line"></div>
+
+
+                <div class="time-point">
+
+                    <strong>
+                        09:32 AM
+                    </strong>
+
+                    <span>
+                        Arrival
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="route-info">
+
+
+                <div class="info-row">
+
+                    <i class="bi bi-clock"></i>
+
+                    37 min
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <i class="bi bi-signpost"></i>
+
+                    9 stops
+
+                </div>
+
+            </div>
+
+
+
+            <div class="route-status">
+
+
+                <span class="status on-time">
+
+                    <i class="bi bi-circle-fill"></i>
+
+                    On Time
+
+                </span>
+
+
+                <div class="eta">
+
+                    18 min
+
+                    <small>
+                        away
+                    </small>
+
+                </div>
+
+
+                <button
+                    class="track-route"
+                    type="button">
+
+                    <i class="bi bi-broadcast"></i>
+
+                    Track Live
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ==================================================
+             ROUTE 18
+        ================================================== -->
+
+        <article
+            class="route-card"
+            data-type="fastest">
+
+
+            <div class="route-title">
+
+
+                <div class="bus-number">
+
+                    <i class="bi bi-bus-front-fill"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+
+                        Route 18
+
+                        <span class="recommended">
+                            MATCH
+                        </span>
+
+                    </strong>
+
+
+                    <span>
+                        Tiruchengode → Ksr College
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="route-time">
+
+
+                <div class="time-point">
+
+                    <strong>
+                        09:10 AM
+                    </strong>
+
+                    <span>
+                        Departure
+                    </span>
+
+                </div>
+
+
+                <div class="timeline-line"></div>
+
+
+                <div class="time-point">
+
+                    <strong>
+                        09:48 AM
+                    </strong>
+
+                    <span>
+                        Arrival
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="route-info">
+
+
+                <div class="info-row">
+
+                    <i class="bi bi-clock"></i>
+
+                    38 min
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <i class="bi bi-signpost"></i>
+
+                    10 stops
+
+                </div>
+
+            </div>
+
+
+
+            <div class="route-status">
+
+
+                <span class="status on-time">
+
+                    <i class="bi bi-circle-fill"></i>
+
+                    On Time
+
+                </span>
+
+
+                <div class="eta">
+
+                    22 min
+
+                    <small>
+                        away
+                    </small>
+
+                </div>
+
+
+                <button
+                    class="track-route"
+                    type="button">
+
+                    <i class="bi bi-broadcast"></i>
+
+                    Track Live
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ==================================================
+             ROUTE 42
+        ================================================== -->
+
+        <article
+            class="route-card"
+            data-type="cheapest">
+
+
+            <div class="route-title">
+
+
+                <div class="bus-number">
+
+                    <i class="bi bi-bus-front-fill"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+
+                        Route 42
+
+                        <span class="recommended">
+                            MATCH
+                        </span>
+
+                    </strong>
+
+
+                    <span>
+                        New Bus Stand → Tiruchengode
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="route-time">
+
+
+                <div class="time-point">
+
+                    <strong>
+                        09:20 AM
+                    </strong>
+
+                    <span>
+                        Departure
+                    </span>
+
+                </div>
+
+
+                <div class="timeline-line"></div>
+
+
+                <div class="time-point">
+
+                    <strong>
+                        10:00 AM
+                    </strong>
+
+                    <span>
+                        Arrival
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="route-info">
+
+
+                <div class="info-row">
+
+                    <i class="bi bi-clock"></i>
+
+                    40 min
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <i class="bi bi-signpost"></i>
+
+                    7 stops
+
+                </div>
+
+            </div>
+
+
+
+            <div class="route-status">
+
+
+                <span class="status on-time">
+
+                    <i class="bi bi-circle-fill"></i>
+
+                    On Time
+
+                </span>
+
+
+                <div class="eta">
+
+                    25 min
+
+                    <small>
+                        away
+                    </small>
+
+                </div>
+
+
+                <button
+                    class="track-route"
+                    type="button">
+
+                    <i class="bi bi-broadcast"></i>
+
+                    Track Live
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+
+
+    <!-- ==================================================
+         NO RESULTS
+    ================================================== -->
+
+    <div
+        class="no-results"
+        id="noResults">
+
+
+        <i class="bi bi-signpost-split"></i>
+
+
+        <h3>
+            No routes found
+        </h3>
+
+
+        <p>
+            Try another starting point or destination.
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ======================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script src="js/routes.js"></script>
+
+
+</body>
+
+</html>
